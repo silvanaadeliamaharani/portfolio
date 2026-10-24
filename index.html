@@ -168,7 +168,7 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
 .agrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
 .agrid > *{min-width:0}
 .polar{background:var(--cream);padding:12px 12px 46px;border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);max-width:340px;margin-inline:auto;position:relative}
-.polar img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;background:var(--slate)}
+.polar img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;background:var(--slate)}
 .polar figcaption{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:var(--groovy);color:var(--maroon);font-size:1.15rem}
 .about blockquote{margin:0;font-family:var(--serif);font-size:1.08rem;line-height:1.7}
 .about blockquote p{margin:0 0 14px}
@@ -185,13 +185,13 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
 .school h3::before{content:"✳ ";color:var(--sun)}
 .school p{margin:0;font-size:.98rem}
 .school .pix{display:block;margin-bottom:4px}
-.photos{position:relative;height:560px}
-.photos .ph{position:absolute;background:var(--cream);padding:10px 10px 34px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);width:56%}
-.photos .ph img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.photos{position:relative;aspect-ratio:1/1.12;max-width:560px;width:100%;margin-inline:auto}
+.photos .ph{position:absolute;background:var(--cream);padding:10px 10px 34px;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);width:56%;z-index:1}
+.photos .ph img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
 .photos .ph span{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--tape);font-size:.72rem;text-transform:uppercase}
 .photos .ph:nth-child(1){left:0;top:0;--r:-6deg;transform:rotate(-6deg)}
 .photos .ph:nth-child(2){right:0;top:60px;--r:5deg;transform:rotate(5deg)}
-.vinyl{position:absolute;width:130px;right:-18px;bottom:-10px;z-index:3;animation:spin 6s linear infinite}
+.vinyl{position:absolute;width:210px;right:-90px;top:-40px;z-index:0;animation:bob 5s ease-in-out infinite;--r:-12deg}
 
 /* ORGANIZATION (PDF p5) */
 .org{background:repeating-conic-gradient(var(--ink) 0 25%,#8e7a4f 0 50%) 0 0/64px 64px}
@@ -471,8 +471,8 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
   .docs{grid-template-columns:repeat(2,1fr)}
   .docs button.wide{grid-column:span 2}
   .docs button:nth-child(even){margin-top:0}
-  .photos{height:380px}
-  .vinyl{width:90px;right:-8px}
+  .photos{max-width:420px}
+  .vinyl{width:120px;right:-40px;top:-30px}
   .collage{min-height:360px}
   .collage.three .c{height:250px!important}
   .collage.two .c{height:300px!important}
@@ -627,7 +627,7 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
       <button class="rv" type="button" data-src="assets/cert-2.webp"><img src="assets/cert-2.webp" alt="Sertifikat atas nama Silvana Adelia Maharani" width="686" height="489" loading="lazy"><span>Peserta LKMM-PD · Bahasa Asing Terapan 2022</span></button>
       <button class="rv" type="button" data-src="assets/cert-3.webp"><img src="assets/cert-3.webp" alt="Piagam Juara II kejuaraan pencak silat" width="805" height="585" loading="lazy"><span>Juara II · IPSI Kota Semarang 2024</span></button>
       <button class="rv" type="button" data-src="assets/cert-5.webp"><img src="assets/cert-5.webp" alt="Sertifikat Juara I Lawang Sewu Open Championship 2024" width="768" height="521" loading="lazy"><span>Juara I · Lawang Sewu Open Championship 2024</span></button>
-      <button class="rv" type="button" data-src="assets/cert-6.webp"><img src="assets/cert-6.webp" alt="Sertifikat Juara III kejuaraan pencak silat 2023" width="600" height="1000" loading="lazy"><span>Juara III · Kejuaraan Pencak Silat 2023</span></button>
+      <button class="rv" type="button" data-src="assets/cert-6.webp"><img src="assets/cert-6.webp" alt="Sertifikat Juara III Lawang Sewu Championship 2023" width="738" height="555" loading="lazy"><span>Juara III · Lawang Sewu Championship 2023</span></button>
     </div>
   </div>
 </section>
