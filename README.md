@@ -1,2 +1,5 @@
-# Silvana-Adelia-Maharani
-Portofolio Silvana Adelia Maharani, Content Creator dan Social Media Specialist.
+# Silvana Adelia Maharani
+
+Portofolio Content Creator dan Social Media Specialist.
+
+Lihat website: https://solevibe.github.io/Silvana-Adelia-Maharani/

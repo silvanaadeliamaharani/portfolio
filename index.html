@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Silvana Adelia Maharani</title>
+<meta name="description" content="Portofolio Silvana Adelia Maharani, Content Creator dan Social Media Specialist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Young+Serif&family=Archivo+Black&family=Silkscreen&family=Karla:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: retro 70s scrapbook, one coloured "slide" band per section (taken from her PDF deck):
+   maroon hero, slate 3D reel, mustard TV, forest gallery, orange design wall, brown experience, indigo skills, maroon contact.
+   Single committed look, so one palette for both themes. */
+:root{
+  --maroon:#72201C; --maroon-d:#521A16; --mustard:#D9A93E; --sun:#F2CB3D; --slate:#5D7275; --teal:#3F757B;
+  --orange:#B0603F; --forest:#0F3D25; --brown:#3E241C; --indigo:#454C9C; --cream:#FBEFD2; --ink:#1A110E;
+  --groovy:"Shrikhand", "Cooper Black", Georgia, serif;
+  --serif:"Young Serif", "Cooper Black", Georgia, serif;
+  --tape:"Archivo Black", "Arial Black", Impact, sans-serif;
+  --pixel:"Silkscreen", "Courier New", monospace;
+  --body:"Karla", "Segoe UI", system-ui, sans-serif;
+  color-scheme:dark;
+}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+body{margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--maroon);color:var(--cream);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
+a{color:var(--sun)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+em{font-style:italic}
+img{display:block}
+
+.band{position:relative;padding-block:72px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));overflow:hidden}
+.band > .in{position:relative;z-index:1;max-width:1120px;margin-inline:auto}
+.dots::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(26,17,14,.28) 1.4px,transparent 1.6px);background-size:14px 14px;pointer-events:none}
+.checker{height:28px;background:repeating-conic-gradient(var(--ink) 0 25%,var(--mustard) 0 50%) 0 0/28px 28px}
+
+/* type */
+.groovy{font-family:var(--groovy);font-weight:400;color:var(--cream);letter-spacing:.005em;line-height:1.02;
+  text-shadow:3px 3px 0 var(--ink),5px 5px 0 var(--ink);-webkit-text-stroke:1.5px var(--ink);paint-order:stroke fill;text-wrap:balance;margin:0}
+h2.groovy{font-size:clamp(2.2rem,5.4vw,3.8rem);margin-bottom:14px}
+.tape{display:inline-block;font-family:var(--tape);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);background:var(--cream);
+  padding:6px 16px 5px;transform:rotate(-2deg);box-shadow:3px 3px 0 var(--ink);font-size:.95rem}
+.tape.sun{background:var(--sun)} .tape.indigo{background:var(--indigo);color:var(--cream)}
+.lead{font-family:var(--serif);font-size:1.12rem;max-width:56ch;margin:0 0 22px}
+.muted{opacity:.85}
+.star{color:var(--sun);font-family:var(--serif)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--tape);text-transform:uppercase;letter-spacing:.03em;font-size:.88rem;
+  padding:12px 20px;background:var(--cream);color:var(--ink);text-decoration:none;border:2.5px solid var(--ink);border-radius:999px;box-shadow:4px 4px 0 var(--ink);cursor:pointer}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.btn.sun{background:var(--sun)}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+
+/* HERO */
+.hero{background:var(--maroon);padding-top:28px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.logo{font-family:var(--pixel);font-size:1rem;color:var(--sun);letter-spacing:.04em}
+.top nav{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--tape);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}
+.top nav a{color:var(--cream);text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1;color:var(--sun)}
+.hgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+.hgrid > *{min-width:0}
+.hello{font-family:var(--groovy);font-size:clamp(1.6rem,3.4vw,2.4rem);color:var(--sun);margin:18px 0 0;text-shadow:3px 3px 0 var(--ink)}
+.name{font-size:clamp(3rem,8.4vw,6.2rem);margin:4px 0 18px}
+.stickers{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 0;padding:0;list-style:none}
+.stickers li{background:var(--cream);color:var(--ink);border:2.5px solid var(--ink);border-radius:14px;padding:10px 14px;box-shadow:4px 4px 0 var(--ink);min-width:0}
+.stickers li:nth-child(2){transform:rotate(2deg);background:var(--sun)}
+.stickers li:nth-child(3){transform:rotate(-2deg)}
+.stickers b{display:block;font-family:var(--groovy);font-size:1.7rem;line-height:1;color:var(--maroon)}
+.stickers span{font-size:.82rem;font-weight:600}
+.portrait{position:relative;aspect-ratio:1/1;max-width:460px;width:100%;margin-inline:auto}
+.portrait .disc{position:absolute;inset:6%;border-radius:50%;background:var(--slate);border:10px solid var(--ink);box-shadow:0 0 0 8px var(--mustard)}
+.portrait .disc::after{content:"";position:absolute;inset:0;border-radius:50%;background-image:radial-gradient(rgba(26,17,14,.35) 1.4px,transparent 1.6px);background-size:12px 12px}
+.portrait img{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);height:96%;width:auto;max-width:none;z-index:2;-webkit-mask-image:radial-gradient(circle at 50% 46%,#000 61%,transparent 61.2%);mask-image:radial-gradient(circle at 50% 46%,#000 61%,transparent 61.2%)}
+.portrait .badge{position:absolute;z-index:3;right:-2%;top:6%;background:var(--sun);color:var(--ink);font-family:var(--tape);font-size:.8rem;text-transform:uppercase;padding:10px 12px;border:2.5px solid var(--ink);border-radius:50%;width:110px;height:110px;display:grid;place-items:center;text-align:center;line-height:1.15;transform:rotate(10deg);box-shadow:4px 4px 0 var(--ink)}
+.squiggle{position:absolute;left:-4%;bottom:10%;z-index:3;width:120px;height:auto}
+
+/* REEL (3D) */
+.reel{background:var(--slate)}
+.rgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:center}
+.rgrid > *{min-width:0}
+.stage{position:relative;height:500px;perspective:1200px;display:flex;align-items:center;justify-content:center;cursor:grab;touch-action:pan-y;user-select:none}
+.stage:active{cursor:grabbing}
+.ring{position:relative;width:170px;height:378px;transform-style:preserve-3d}
+.shot{position:absolute;inset:0;border:7px solid var(--ink);border-radius:26px;overflow:hidden;background:var(--ink);backface-visibility:hidden;box-shadow:6px 6px 0 rgba(26,17,14,.6)}
+.shot img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.hint{position:absolute;bottom:0;left:50%;transform:translateX(-50%);font-family:var(--pixel);font-size:.72rem;white-space:nowrap;color:var(--cream)}
+.list{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:8px;font-family:var(--serif)}
+
+/* TV */
+.tvband{background:var(--mustard);color:var(--ink)}
+.tvband .groovy{color:var(--cream)}
+.tvgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.tvgrid > *{min-width:0}
+.tv{position:relative;width:100%;max-width:560px;aspect-ratio:909/600;margin-inline:auto;display:block;text-decoration:none}
+.tv img{position:absolute;inset:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.tv .screen{position:absolute;z-index:1;left:9%;top:10%;width:58%;height:75%;border-radius:14% / 18%;background:var(--maroon);overflow:hidden;display:grid;place-items:center}
+.tv .screen::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.18) 0 2px,transparent 2px 4px)}
+.tv .screen span{position:relative;font-family:var(--pixel);color:var(--sun);font-size:clamp(.7rem,1.6vw,1rem);text-align:center;line-height:1.5;padding:8px}
+.tv .playbtn{position:absolute;z-index:3;left:38%;top:47%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;background:var(--sun);border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);display:grid;place-items:center}
+.tv .playbtn::after{content:"";margin-left:6px;border-left:20px solid var(--ink);border-top:12px solid transparent;border-bottom:12px solid transparent}
+.tvband .lead{color:var(--ink)}
+.tvband .list{color:var(--ink)}
+.tvband .star{color:var(--maroon)}
+
+/* GALLERY */
+.gallery{background:var(--forest)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 26px}
+.filters button{font-family:var(--tape);text-transform:uppercase;font-size:.8rem;letter-spacing:.03em;padding:9px 14px;border:2.5px solid var(--ink);border-radius:999px;background:var(--cream);color:var(--ink);cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--sun)}
+.filters .n{font-family:var(--pixel);margin-left:6px;font-size:.72rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px}
+.vid{position:relative;display:flex;flex-direction:column;aspect-ratio:9/16;border:4px solid var(--ink);border-radius:18px;overflow:hidden;text-decoration:none;color:var(--cream);box-shadow:5px 5px 0 var(--ink);background:var(--maroon)}
+.vid:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.vid .face{position:absolute;inset:0;background-image:radial-gradient(rgba(26,17,14,.35) 1.4px,transparent 1.6px);background-size:12px 12px}
+.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,17,14,.85),rgba(26,17,14,0) 55%)}
+.vid .lbl{position:absolute;left:10px;top:10px;font-family:var(--tape);font-size:.66rem;text-transform:uppercase;background:var(--cream);color:var(--ink);padding:3px 8px;transform:rotate(-3deg);box-shadow:2px 2px 0 var(--ink)}
+.vid .t{position:absolute;left:12px;right:12px;bottom:12px;font-family:var(--serif);font-size:1rem;line-height:1.2}
+.vid .p{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--sun);border:3px solid var(--ink);display:grid;place-items:center}
+.vid .p::after{content:"";margin-left:4px;border-left:14px solid var(--ink);border-top:9px solid transparent;border-bottom:9px solid transparent}
+.note{font-size:.9rem;margin-top:22px;opacity:.85}
+
+/* NUMBERS */
+.nums{background:var(--indigo)}
+.ngrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.n4{background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:18px;padding:20px;box-shadow:5px 5px 0 var(--ink)}
+.n4:nth-child(even){transform:rotate(1.2deg)} .n4:nth-child(odd){transform:rotate(-1deg)}
+.n4 b{display:block;font-family:var(--groovy);font-size:clamp(2.2rem,4.4vw,3rem);line-height:1;color:var(--maroon);font-variant-numeric:tabular-nums}
+.n4 small{display:block;font-family:var(--pixel);font-size:.72rem;margin-top:8px;color:var(--teal)}
+.n4 p{margin:8px 0 0;font-size:.95rem}
+
+/* DESIGN WALL */
+.wall{background:var(--orange)}
+.posters{display:grid;grid-template-columns:repeat(7,1fr);gap:14px;align-items:start;margin-top:10px}
+.poster{position:relative;border:4px solid var(--ink);background:var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.poster img{width:100%;height:auto}
+.poster::before{content:"";position:absolute;z-index:2;top:-12px;left:50%;width:70px;height:22px;transform:translateX(-50%) rotate(-4deg);background:rgba(251,239,210,.82)}
+.poster:nth-child(1){transform:rotate(-3deg)} .poster:nth-child(2){transform:rotate(2deg);margin-top:30px} .poster:nth-child(3){transform:rotate(-1deg)}
+.poster:nth-child(4){transform:rotate(3deg);margin-top:20px} .poster:nth-child(5){transform:rotate(-2deg)} .poster:nth-child(6){transform:rotate(2deg);margin-top:36px} .poster:nth-child(7){transform:rotate(-3deg);margin-top:10px}
+.screens{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.screens figure{margin:0;border:4px solid var(--ink);border-radius:12px;overflow:hidden;box-shadow:5px 5px 0 var(--ink);background:var(--ink)}
+.screens img{width:100%;height:auto}
+
+/* EXPERIENCE */
+.exp{background:var(--brown)}
+.jobs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.job{background:rgba(251,239,210,.06);border:2px dashed rgba(251,239,210,.35);border-radius:16px;padding:22px;min-width:0}
+.job .tape{margin-bottom:12px;font-size:.82rem}
+.job h3{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin:4px 0 2px}
+.when{font-family:var(--pixel);font-size:.72rem;color:var(--sun)}
+.job ul{margin:10px 0 0;padding-left:20px}
+.job li{margin-bottom:5px}
+
+/* SKILLS */
+.skills{background:var(--teal)}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.sgrid > div{min-width:0}
+.ast{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px;font-family:var(--serif)}
+.ast li::before{content:"✳ ";color:var(--sun)}
+.lang{display:grid;gap:10px;margin-top:14px}
+.lang div{display:flex;justify-content:space-between;gap:10px;border-bottom:2px dotted rgba(251,239,210,.4);padding-bottom:6px;font-family:var(--serif)}
+.lang span{font-family:var(--pixel);font-size:.72rem;color:var(--sun);text-align:right}
+
+/* CONTACT */
+.contact{background:var(--maroon)}
+.cgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:end}
+.cgrid > *{min-width:0}
+.mail{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:8px 0 22px}
+.addr{font-family:var(--serif);font-size:clamp(1rem,2.4vw,1.35rem);background:var(--cream);color:var(--ink);padding:10px 16px;border:2.5px solid var(--ink);border-radius:12px;box-shadow:4px 4px 0 var(--ink);user-select:all;overflow-wrap:anywhere}
+.toast{font-family:var(--pixel);font-size:.75rem;color:var(--sun);min-height:1.2em}
+.links{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.links a{display:block;background:var(--cream);color:var(--ink);text-decoration:none;border:2.5px solid var(--ink);border-radius:14px;padding:14px;box-shadow:4px 4px 0 var(--ink)}
+.links a:hover{background:var(--sun)}
+.links b{display:block;font-family:var(--tape);text-transform:uppercase;font-size:.85rem}
+.links span{font-size:.88rem}
+.shades{width:100%;max-width:360px;height:auto;margin-inline:auto}
+.thanks{text-align:center;padding-block:56px 64px;background:#3B3836}
+.thanks .groovy{font-size:clamp(2.6rem,7vw,5rem)}
+.thanks p:not(.groovy){font-family:var(--pixel);font-size:.8rem;color:var(--sun);margin:18px 0 0}
+
+/* modal (standalone site only) */
+.modal{position:fixed;inset:0;z-index:60;background:rgba(26,17,14,.88);display:flex;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.modal .box{position:relative;width:min(380px,100%);aspect-ratio:9/16;max-height:100%;border:5px solid var(--ink);border-radius:20px;overflow:hidden;background:#000;box-shadow:6px 6px 0 var(--sun)}
+.modal iframe{width:100%;height:100%;border:0}
+.modal .x{position:absolute;top:10px;right:10px;z-index:2}
+
+@media (max-width:900px){
+  .hgrid,.rgrid,.tvgrid,.cgrid{grid-template-columns:1fr}
+  .portrait{max-width:360px}
+  .stage{height:440px}
+  .ngrid{grid-template-columns:repeat(2,1fr)}
+  .posters{grid-template-columns:repeat(4,1fr)}
+  .screens,.jobs,.sgrid,.links{grid-template-columns:1fr}
+}
+@media (max-width:480px){
+  .posters{grid-template-columns:repeat(2,1fr)}
+  .poster:nth-child(n){margin-top:0}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .portrait .badge{width:88px;height:88px;font-size:.66rem}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.btn:hover,.vid:hover{transform:none}}
+</style>
+</head>
+<body>
+<header class="band hero dots">
+  <div class="in">
+    <div class="top">
+      <div class="logo">THIS IS MY PORTFOLIO</div>
+      <nav aria-label="Navigasi utama"><a href="#reel">Konten</a><a href="#video">Video</a><a href="#desain">Desain</a><a href="#pengalaman">Pengalaman</a><a href="#kontak">Kontak</a></nav>
+    </div>
+    <div class="hgrid">
+      <div>
+        <span class="tape sun">Content Creator · Social Media Specialist</span>
+        <p class="hello">Hello, I'm</p>
+        <h1 class="groovy name">Silvana Adelia</h1>
+        <p class="lead">Saya membuat konten yang dekat dengan keseharian audiens: dari ide, naskah, tampil di depan kamera, sampai <em>editing</em> dan mengelola akunnya. Lulusan D4 Bahasa Asing Terapan, Universitas Diponegoro.</p>
+        <div class="row">
+          <a class="btn sun" href="#video">Tonton karya saya</a>
+          <a class="btn" href="#kontak">Hubungi saya</a>
+        </div>
+        <ul class="stickers">
+          <li><b>1,2 jt</b><span>views konten tim IM3</span></li>
+          <li><b>+52%</b><span>pengikut TikTok</span></li>
+          <li><b>+36%</b><span>pengikut Instagram</span></li>
+        </ul>
+      </div>
+      <div class="portrait">
+        <div class="disc"></div>
+        <img src="assets/me.webp" alt="Foto Silvana Adelia Maharani" width="677" height="900">
+        <div class="badge">Jakarta · siap magang</div>
+        <svg class="squiggle" viewBox="0 0 120 30" aria-hidden="true"><path d="M2 15 Q12 2 22 15 T42 15 T62 15 T82 15 T102 15 T118 15" fill="none" stroke="#F2CB3D" stroke-width="6" stroke-linecap="round"/></svg>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="checker" aria-hidden="true"></div>
+
+<section class="band reel dots" id="reel">
+  <div class="in rgrid">
+    <div>
+      <h2 class="groovy">Act &amp; Content Creator</h2>
+      <p class="lead">Saya tidak hanya di balik layar. Saya juga tampil sebagai <em>talent</em>, menulis naskahnya, dan mengarahkan teman satu tim di depan kamera.</p>
+      <ul class="list">
+        <li><span class="star">✳</span> Konten <em>relatable</em> untuk IM3 Circle Java</li>
+        <li><span class="star">✳</span> 18 konten per bulan untuk Venti Selfphoto Studio</li>
+        <li><span class="star">✳</span> Ide, naskah, <em>shooting</em>, dan <em>editing</em> sendiri</li>
+      </ul>
+      <a class="btn sun" href="#video">Lihat semua video</a>
+    </div>
+    <div class="stage" id="stage" aria-label="Carousel 3D berisi tangkapan layar konten Silvana">
+      <div class="ring" id="ring"></div>
+      <span class="hint">seret untuk memutar</span>
+    </div>
+  </div>
+</section>
+
+<section class="band tvband dots" id="unggulan">
+  <div class="in tvgrid">
+    <a class="tv" id="tv" href="https://drive.google.com/file/d/1MS4N9P6jnwC4ZZplLpBIjV7cb8zr1A2m/view" target="_blank" rel="noopener" aria-label="Tonton video assessment Social Media Specialist">
+      <span class="screen"><span>NOW PLAYING<br>SOSMED SPECIALIST<br>by Silvana</span></span>
+      <img src="assets/tv.webp" alt="" width="909" height="600">
+      <span class="playbtn" aria-hidden="true"></span>
+    </a>
+    <div>
+      <span class="tape">Video unggulan</span>
+      <h2 class="groovy" style="margin-top:14px">Kenalan lewat satu video</h2>
+      <p class="lead">Video <em>assessment</em> yang saya buat untuk posisi <em>Social Media Specialist</em>. Di sini terlihat cara saya menyusun ide, berbicara di depan kamera, dan mengemas konten sampai siap tayang.</p>
+      <ul class="list">
+        <li><span class="star">✳</span> Naskah dan konsep buatan sendiri</li>
+        <li><span class="star">✳</span> Tampil percaya diri di depan kamera</li>
+        <li><span class="star">✳</span> Diedit hingga siap untuk Reels dan TikTok</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="checker" aria-hidden="true"></div>
+
+<section class="band gallery dots" id="video">
+  <div class="in">
+    <h2 class="groovy">Galeri Video</h2>
+    <p class="lead">28 video pendek yang saya produksi untuk IM3 Circle Java, Venti Selfphoto Studio, dan klien <em>freelance</em>. Klik untuk menonton.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filter galeri"></div>
+    <div class="grid" id="grid"></div>
+    <p class="note">Video diputar dari Google Drive. Kalau tidak terbuka, buka <a href="https://drive.google.com/drive/folders/1qnlIxaMEzfXUGw6X-0i4dpLI9VoI-0Un" target="_blank" rel="noopener">folder lengkapnya di Drive</a>.</p>
+  </div>
+</section>
+
+<section class="band nums dots" id="angka">
+  <div class="in">
+    <h2 class="groovy">Hasilnya dalam angka</h2>
+    <p class="lead">Dari akun yang saya kelola sendiri dan bersama tim.</p>
+    <div class="ngrid">
+      <div class="n4"><b>+36%</b><small>2.800 → 3.800</small><p>Pengikut Instagram Venti Selfphoto Studio</p></div>
+      <div class="n4"><b>+52%</b><small>682 → 1.036</small><p>Pengikut TikTok dalam enam bulan</p></div>
+      <div class="n4"><b>18</b><small>KONTEN / BULAN</small><p>Dari ide sampai <em>editing</em>, dikerjakan sendiri</p></div>
+      <div class="n4"><b>1,2 jt</b><small>VIEWS · 180 RB LIKES</small><p>Konten tim IM3 yang ikut saya produksi</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band wall dots" id="desain">
+  <div class="in">
+    <h2 class="groovy">Simple Design</h2>
+    <p class="lead">Poster, menu, dan materi promosi yang saya desain dengan Canva untuk organisasi dan usaha.</p>
+    <div class="posters">
+      <div class="poster"><img src="assets/desain-1.webp" alt="Desain poster 1" loading="lazy" width="420" height="934"></div>
+      <div class="poster"><img src="assets/desain-2.webp" alt="Desain poster dokumentasi acara" loading="lazy" width="403" height="896"></div>
+      <div class="poster"><img src="assets/desain-3.webp" alt="Desain poster ucapan selamat Tapak Suci Undip" loading="lazy" width="403" height="896"></div>
+      <div class="poster"><img src="assets/desain-4.webp" alt="Desain menu makanan" loading="lazy" width="420" height="699"></div>
+      <div class="poster"><img src="assets/desain-5.webp" alt="Desain poster organisasi" loading="lazy" width="420" height="699"></div>
+      <div class="poster"><img src="assets/desain-6.webp" alt="Desain company profile" loading="lazy" width="420" height="699"></div>
+      <div class="poster"><img src="assets/desain-7.webp" alt="Desain brosur wisata" loading="lazy" width="420" height="601"></div>
+    </div>
+    <div class="screens">
+      <figure><img src="assets/canva-1.webp" alt="Proses desain di Canva" loading="lazy" width="760" height="456"></figure>
+      <figure><img src="assets/canva-2.webp" alt="Rangkaian desain feed Instagram" loading="lazy" width="760" height="651"></figure>
+      <figure><img src="assets/canva-3.webp" alt="Desain paket promosi di Canva" loading="lazy" width="760" height="456"></figure>
+    </div>
+  </div>
+</section>
+<div class="checker" aria-hidden="true"></div>
+
+<section class="band exp dots" id="pengalaman">
+  <div class="in">
+    <h2 class="groovy">Experience &amp; Project</h2>
+    <p class="lead">Dari operator seluler, studio foto, sampai agensi TikTok Live.</p>
+    <div class="jobs">
+      <article class="job"><span class="tape sun">Social Media Specialist</span><h3>Venti Selfphoto Studio</h3><div class="when">MAR 2026 – SEP 2026 · SEMARANG</div>
+        <ul><li>Pengikut Instagram naik 36% dan TikTok naik 52%.</li><li>18 konten foto dan video per bulan; konten terbaik 12.000+ <em>views</em>.</li><li>Dua kampanye promo per bulan; yang terkuat membuat dua cabang penuh selama seminggu.</li></ul></article>
+      <article class="job"><span class="tape">Brand Activation &amp; Digital Social Media Intern</span><h3>PT Indosat Ooredoo Hutchison Tbk · IM3 Circle Java</h3><div class="when">SEP 2025 – MAR 2026 · SEMARANG</div>
+        <ul><li>Mengelola tiga akun Instagram regional IM3 bersama tim yang membuat 40 konten per bulan.</li><li>Ikut memproduksi konten yang mencapai 1,2 juta <em>views</em> dan 180.000 <em>likes</em>.</li><li>Membriefing dan mendampingi KOL di <em>event</em> Solo dan peluncuran 5G Yogyakarta, serta membuat <em>live report</em>.</li></ul></article>
+      <article class="job"><span class="tape indigo">Talent Manager TikTok Live</span><h3>PT Chao Lei Hei</h3><div class="when">JAN 2024 – MEI 2024 · TANGERANG</div>
+        <ul><li>Merekrut 30 kreator baru per bulan.</li><li>Membimbing rata-rata 20 <em>talent</em> aktif mengelola <em>live</em> TikTok.</li></ul></article>
+      <article class="job"><span class="tape sun">PRJ Events · Barista</span><h3>Jakarta Fair dan Lingkar Coffee &amp; Idea</h3><div class="when">2022 – 2024 · JAKARTA · SEMARANG</div>
+        <ul><li>Memimpin tim 4 orang di stan Jakarta Fair.</li><li>Mempromosikan produk kepada pengunjung pameran dan melayani pelanggan setiap hari.</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="band skills dots" id="keahlian">
+  <div class="in sgrid">
+    <div><h2 class="groovy" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Key Skill</h2>
+      <ul class="ast"><li>Ide konten dan <em>scriptwriting</em></li><li>Tampil sebagai <em>talent</em></li><li><em>Video editing</em> (CapCut)</li><li><em>Graphic design</em> (Canva)</li><li><em>Social media management</em></li><li>Koordinasi KOL</li></ul></div>
+    <div><h2 class="groovy" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Personal Skill</h2>
+      <ul class="ast"><li><em>Public speaking</em></li><li>Komunikasi persuasif</li><li><em>Customer service</em></li><li>Teliti dan tepat waktu</li><li><em>Problem solving</em></li></ul></div>
+    <div><h2 class="groovy" style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Bahasa</h2>
+      <div class="lang"><div>Indonesia<span>BAHASA IBU</span></div><div>English<span>TOEIC 570</span></div><div>日本語<span>DASAR</span></div></div>
+      <p style="margin:18px 0 0;font-family:var(--serif)">D4 Bahasa Asing Terapan<br><span class="muted">Universitas Diponegoro · IPK 3,43</span></p></div>
+  </div>
+</section>
+<div class="checker" aria-hidden="true"></div>
+
+<section class="band contact dots" id="kontak">
+  <div class="in cgrid">
+    <div>
+      <h2 class="groovy">Contact</h2>
+      <p class="lead">Terbuka untuk magang dan posisi <em>Content Creator</em> atau <em>Social Media Specialist</em>. Berdomisili di Jakarta.</p>
+      <div class="mail"><span class="addr" id="email">adeliasilvana140@gmail.com</span><button class="btn sun" id="copy" type="button">Salin email</button><span class="toast" id="toast" role="status"></span></div>
+      <div class="links">
+        <a href="https://drive.google.com/file/d/1LuDirucUPniU5a9NBY80tzfbKcGSy-yc/view" target="_blank" rel="noopener"><b>Portofolio PDF</b><span>Versi lengkap 21 halaman</span></a>
+        <a href="https://drive.google.com/drive/folders/1qnlIxaMEzfXUGw6X-0i4dpLI9VoI-0Un" target="_blank" rel="noopener"><b>Semua video</b><span>Folder Google Drive</span></a>
+        <a href="https://www.linkedin.com/in/silvanaadeliamaharani" target="_blank" rel="noopener"><b>LinkedIn</b><span>Profil lengkap</span></a>
+      </div>
+    </div>
+    <img class="shades" src="assets/me-shades.webp" alt="Silvana berpose dengan kacamata hitam" width="432" height="800">
+  </div>
+</section>
+<footer class="thanks band"><div class="in"><p class="groovy">Thank You So Much</p><p>PRESENTATION BY SILVANA ADELIA M.</p></div></footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Pemutar video">
+  <div class="box"><button class="btn sun x" id="closeModal" type="button">Tutup</button><iframe id="player" title="Video" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+</div>
+
+<script>
+(function(){
+  var V=[
+    ["IM3","Ketika chat terjadi di real life","1N0uMK1vvtPmu8qripn8B-KzEuzfamzef"],
+    ["IM3","Alasan selalu happy di mana pun","19uVAMoWbqXb-VtIwi1lFNY-2CFZ1iFJU"],
+    ["IM3","Revisi untuk pacar, terkirim ke bos","1XJE1QPezJOOH9tD90xFiCeC0GvBHUj5V"],
+    ["IM3","Tipe cara minta propose ke atasan","1Z7ztfuyniwX4yjy_ckAmvkZibHq_opup"],
+    ["IM3","What's in my bag","1hMyUzlxqHDSS7i4NPJC8CTPHe6KepjOZ"],
+    ["IM3","Phoneholic","1x9ghnaWcCV0yXFcz01rizqOd6TYiOanl"],
+    ["IM3","Happy happy streaming","1qsSO-fomQvDz6q_54PvdsiYC_iId945Q"],
+    ["IM3","Gerai IM3","1rz-f_NiKgI6y3AeLfC1E3TQlvOSNhaaa"],
+    ["IM3","Day 1","1ZekqffV1oi_2gNQfPdmrYzjy08KTTt4r"],
+    ["IM3","Konten player IM3","18Q0DlCBWrvPzlxZYrWI6l8fuEdUBMw6L"],
+    ["IM3","Kami belum tentu","1lUh3X_dMkEdfEfXYb94tyfpUURN-scpC"],
+    ["IM3","Chat di ujung","1ajuk9HfwMzV-yZ0bj_ncR-5P1YB4T_2Z"],
+    ["IM3","Pindah","1Sa0cELV_zDJ9s-5lYeDQwej3UYjmiKbt"],
+    ["IM3","Pilates","1eDoM5SRKVpju90NPNLhJBV9S81StU4y-"],
+    ["IM3","HiFi","1FoOOYzypMhIeNFfOG-xe7hwS2o9vxZYh"],
+    ["IM3","Satspam","1Vw0Uu-nHd7am20uXrBHYwal_01S9HY4X"],
+    ["IM3","Konten IM3","1hHHRXmE49yJRa-nFUvHPUyV2A4jEhpAD"],
+    ["Venti","Konten Venti 1","15p0DgJYaiDua6YQU0K7irwT2a9i3DbyZ"],
+    ["Venti","Konten Venti 2","1phBrAujyRzKVP37D5YouXfbboZJI2abx"],
+    ["Venti","Konten Venti 3","14SDHwQ-R5vlR_5bDJgtCzfHkwsrRHdLk"],
+    ["Venti","Konten Venti 4","1yElDMjEPPZsY-SpQB8MOdYIIhoJVCdeI"],
+    ["Venti","Konten Venti 5","1RqYDsMaXA7IzaqUlWBW6Sd5BguX7w79M"],
+    ["Venti","Konten Venti 6","1rP26fv20ot2gOgkgXAFLHX9mghfV7862"],
+    ["Venti","Konten Venti 7","1JborJ8ZNmhl9YMaS3GcOlg2rXq5OuFXx"],
+    ["Freelance","QnA","1ZBmtkq1uCg1B5BoC_gX0Hn5TPxO2HGek"],
+    ["Freelance","Harapan","1fUCrHKPmbYJ2mXVOqwlHwpvwgqDzk3WZ"],
+    ["Freelance","Konten freelance 1","10OYihUqMcjOUCTjs9IfrWi97DC31mtaX"],
+    ["Freelance","Konten freelance 2","1HeI1fcEafmtINVwrLHbHiyQE8GHR23pO"]
+  ];
+  var LABEL={IM3:"IM3 Circle Java",Venti:"Venti Selfphoto",Freelance:"Freelance"};
+  var BG={IM3:"var(--maroon)",Venti:"var(--teal)",Freelance:"var(--indigo)"};
+  var standalone=(window.self===window.top);
+  function view(id){return "https://drive.google.com/file/d/"+id+"/view";}
+
+  var modal=document.getElementById('modal'),player=document.getElementById('player');
+  function open(id){player.src="https://drive.google.com/file/d/"+id+"/preview";modal.hidden=false;document.getElementById('closeModal').focus();}
+  function close(){modal.hidden=true;player.src='about:blank';}
+  document.getElementById('closeModal').addEventListener('click',close);
+  modal.addEventListener('click',function(e){if(e.target===modal)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
+  document.getElementById('tv').addEventListener('click',function(e){if(standalone){e.preventDefault();open("1MS4N9P6jnwC4ZZplLpBIjV7cb8zr1A2m");}});
+
+  // Gallery
+  var grid=document.getElementById('grid'),filters=document.getElementById('filters'),current="Semua";
+  function card(v){
+    var a=document.createElement('a');a.className='vid';a.href=view(v[2]);a.target='_blank';a.rel='noopener';a.style.background=BG[v[0]];
+    a.setAttribute('aria-label','Tonton: '+v[1]);
+    a.innerHTML='<span class="face"></span><span class="shade"></span><span class="lbl"></span><span class="p" aria-hidden="true"></span><span class="t"></span>';
+    a.querySelector('.lbl').textContent=LABEL[v[0]];a.querySelector('.t').textContent=v[1];
+    if(standalone){var im=new Image();im.alt='';im.loading='lazy';im.referrerPolicy='no-referrer';
+      im.onload=function(){a.insertBefore(im,a.querySelector('.shade'));};im.src="https://drive.google.com/thumbnail?id="+v[2]+"&sz=w480";}
+    a.addEventListener('click',function(e){if(standalone){e.preventDefault();open(v[2]);}});
+    return a;
+  }
+  function render(){
+    grid.innerHTML='';
+    V.filter(function(v){return current==="Semua"||v[0]===current;}).forEach(function(v){grid.appendChild(card(v));});
+    Array.prototype.forEach.call(filters.children,function(b){b.setAttribute('aria-pressed',b.dataset.g===current?'true':'false');});
+  }
+  [["Semua",V.length],["IM3"],["Venti"],["Freelance"]].forEach(function(g){
+    var n=g[1]||V.filter(function(v){return v[0]===g[0];}).length;
+    var b=document.createElement('button');b.type='button';b.dataset.g=g[0];
+    b.innerHTML=(g[0]==="Semua"?"Semua":LABEL[g[0]])+'<span class="n">'+n+'</span>';
+    b.addEventListener('click',function(){current=g[0];render();});filters.appendChild(b);
+  });
+  render();
+
+  // 3D reel with real screenshots
+  var ring=document.getElementById('ring'),stage=document.getElementById('stage');
+  var shots=[1,2,4,5,6,7,8,9],N=shots.length,step=360/N,R=Math.round(170/2/Math.tan(Math.PI/N))+46;
+  shots.forEach(function(k,i){var d=document.createElement('div');d.className='shot';d.style.transform='rotateY('+(i*step)+'deg) translateZ('+R+'px)';
+    var im=document.createElement('img');im.src='assets/konten-'+k+'.webp';im.alt='Tangkapan layar konten '+(i+1);im.width=360;im.height=800;im.loading='lazy';d.appendChild(im);ring.appendChild(d);});
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,base=reduce?0:-0.2;
+  var ang=0,vel=base,drag=false,px=0;
+  stage.addEventListener('pointerdown',function(e){drag=true;px=e.clientX;});
+  window.addEventListener('pointermove',function(e){if(!drag)return;var dx=e.clientX-px;px=e.clientX;ang+=dx*0.35;vel=dx*0.35;});
+  window.addEventListener('pointerup',function(){drag=false;});
+  function tick(){if(!drag){vel+=(base-vel)*0.03;ang+=vel;}ring.style.transform='translateZ(-'+R+'px) rotateX(-5deg) rotateY('+ang+'deg)';requestAnimationFrame(tick);}
+  tick();
+
+  // Copy email
+  var btn=document.getElementById('copy'),toast=document.getElementById('toast'),email=document.getElementById('email');
+  btn.addEventListener('click',function(){
+    var t=email.textContent.trim();
+    function sel(){var r=document.createRange();r.selectNodeContents(email);var s=getSelection();s.removeAllRanges();s.addRange(r);toast.textContent='EMAIL DIPILIH, TEKAN CTRL+C';}
+    try{navigator.clipboard.writeText(t).then(function(){toast.textContent='EMAIL TERSALIN!';},sel);}catch(e){sel();}
+  });
+})();
+</script>
+</body>
+</html>
