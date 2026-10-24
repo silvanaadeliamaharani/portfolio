@@ -35,7 +35,7 @@ button{font:inherit}
 .band > .in{position:relative;z-index:1;max-width:1140px;margin-inline:auto}
 .dots::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(26,17,14,.28) 1.4px,transparent 1.6px);background-size:14px 14px;pointer-events:none}
 .band:not(.hero){border-radius:36px 36px 0 0;box-shadow:0 -14px 30px rgba(0,0,0,.35)}
-.fold{transform-origin:50% 100%;will-change:transform;box-shadow:0 -14px 30px rgba(0,0,0,.35),inset 0 0 0 4000px rgba(10,6,5,var(--dim,0))}
+.fold{transform-origin:50% 100%;will-change:transform;backface-visibility:hidden;box-shadow:0 -14px 30px rgba(0,0,0,.35),inset 0 0 0 4000px rgba(10,6,5,var(--dim,0))}
 .xr{position:relative;height:150px;background:var(--ink);perspective:900px;overflow:hidden;z-index:2}
 .xr > div{position:absolute;left:-8%;width:116%;top:50%;padding:12px 0;white-space:nowrap;overflow:hidden;border-block:3px solid var(--ink);box-shadow:0 10px 0 rgba(0,0,0,.35)}
 .xr .r1{background:linear-gradient(180deg,#ffe27a,var(--sun) 40%,#c99a1f);color:var(--ink);transform:translateY(-50%) rotateZ(-3deg) rotateX(22deg)}
@@ -248,6 +248,24 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
 .tv .playbtn::after{content:"";margin-left:6px;border-left:20px solid var(--ink);border-top:12px solid transparent;border-bottom:12px solid transparent}
 .tvband .lead,.tvband .list{color:var(--ink)}
 .tvband .star{color:var(--maroon)}
+.vtv{position:relative;width:min(400px,100%);margin-inline:auto;background:linear-gradient(150deg,#8a6040,#4b3020 75%);border:5px solid var(--ink);border-radius:34px;padding:22px 22px 96px;box-shadow:12px 12px 0 var(--ink);transform:perspective(1200px) rotateY(10deg) rotateX(4deg);transition:transform .5s}
+.vtv:hover{transform:perspective(1200px) rotateY(0) rotateX(0)}
+.vtv-screen{position:relative;aspect-ratio:9/16;border:6px solid var(--ink);border-radius:26px;overflow:hidden;background:#000;box-shadow:inset 0 0 40px rgba(0,0,0,.8)}
+.vtv-screen::after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 2px,transparent 2px 4px),radial-gradient(ellipse at 50% 40%,transparent 60%,rgba(0,0,0,.45))}
+.vtv video{width:100%;height:100%;object-fit:cover;display:block;cursor:pointer}
+.vtv-live{position:absolute;z-index:2;top:12px;left:12px;font-family:var(--pixel);font-size:.66rem;color:#fff;background:rgba(26,17,14,.7);padding:4px 8px;border-radius:6px}
+.vtv-live::first-letter{color:#ff4d3d}
+.vtv-ui{position:absolute;z-index:3;left:10px;right:10px;bottom:10px;display:flex;gap:8px;align-items:center}
+.vbtn{flex:none;height:36px;min-width:36px;padding:0 10px;border-radius:999px;border:2.5px solid var(--ink);background:var(--sun);color:var(--ink);font-family:var(--tape);font-size:.72rem;cursor:pointer;box-shadow:2px 2px 0 var(--ink)}
+.vbtn.wide{text-transform:uppercase}
+.vbar{flex:1;height:8px;border-radius:99px;background:rgba(251,239,210,.35);overflow:hidden;cursor:pointer}
+.vbar i{display:block;height:100%;width:0;background:var(--sun)}
+.vtv-panel{position:absolute;left:22px;right:22px;bottom:22px;height:56px;display:flex;gap:14px;align-items:center}
+.vtv-panel i{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#e5d3a8,#7a6340);border:3px solid var(--ink)}
+.vtv-panel s{flex:1;height:40px;background:repeating-linear-gradient(90deg,var(--ink) 0 3px,transparent 3px 7px);border-radius:6px}
+.vtv-legs{position:absolute;bottom:-28px;left:50px;right:50px;display:flex;justify-content:space-between}
+.vtv-legs i{width:40px;height:28px;background:var(--ink);border-radius:0 0 10px 10px}
+.mvid{width:100%;height:100%;object-fit:contain;background:#000}
 
 /* VIDEO GALLERY per project */
 .gallery{background:var(--forest)}
@@ -599,18 +617,27 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
 
 <section class="band tvband dots" id="unggulan">
   <div class="in tvgrid">
-    <a class="tv rv" id="tv" href="https://drive.google.com/file/d/1MS4N9P6jnwC4ZZplLpBIjV7cb8zr1A2m/view" target="_blank" rel="noopener" aria-label="Tonton video assessment Social Media Specialist">
-      <span class="screen" id="tvscreen"><span>NOW PLAYING<br>SOSMED SPECIALIST<br>by Silvana</span></span>
-      <img src="assets/tv.webp" alt="" width="909" height="600">
-      <span class="playbtn" aria-hidden="true"></span>
-    </a>
+    <div class="vtv" id="vtv">
+      <div class="vtv-screen">
+        <video id="avid" src="assets/assessment.mp4" poster="assets/assessment.webp" muted loop playsinline preload="metadata" aria-label="Video assessment Social Media Specialist"></video>
+        <span class="vtv-live">● ON AIR</span>
+        <div class="vtv-ui">
+          <button type="button" class="vbtn" id="aplay" aria-label="Jeda video">❚❚</button>
+          <div class="vbar" id="abar"><i id="aprog"></i></div>
+          <button type="button" class="vbtn wide" id="asound">🔇 Nyalakan suara</button>
+          <button type="button" class="vbtn" id="afull" aria-label="Layar penuh">⛶</button>
+        </div>
+      </div>
+      <div class="vtv-panel" aria-hidden="true"><i></i><i></i><s></s></div>
+      <div class="vtv-legs" aria-hidden="true"><i></i><i></i></div>
+    </div>
     <div>
       <span class="tape">Assessment · Video unggulan</span>
       <h2 class="groovy rv" style="margin-top:14px">Kenalan lewat satu video</h2>
-      <p class="lead rv">Video <em>assessment</em> yang saya buat untuk posisi <em>Social Media Specialist</em>. Di sini terlihat cara saya menyusun ide, berbicara di depan kamera, dan mengemas konten sampai siap tayang.</p>
+      <p class="lead rv">Video <em>assessment</em> yang saya buat untuk posisi <em>Social Media Specialist</em>: konten edukasi untuk klinik kecantikan, dikemas singkat untuk Reels dan TikTok. Videonya berputar otomatis di sini; klik <b>Nyalakan suara</b> untuk mendengarkan.</p>
       <ul class="list rv">
         <li><span class="star">✳</span> Naskah dan konsep buatan sendiri</li>
-        <li><span class="star">✳</span> Tampil percaya diri di depan kamera</li>
+        <li><span class="star">✳</span> Format vertikal, kurang dari satu menit</li>
         <li><span class="star">✳</span> Diedit hingga siap untuk Reels dan TikTok</li>
       </ul>
     </div>
@@ -809,7 +836,7 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
 <footer class="thanks band"><div class="in"><p class="groovy rv">Thank You<br>So Much</p><span class="search"><i aria-hidden="true"></i>Presentation by Silvana Adelia M.</span></div></footer>
 
 <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Pemutar video">
-  <div class="box"><button class="btn sun x" id="closeModal" type="button">Tutup</button><iframe id="player" title="Video" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+  <div class="box"><button class="btn sun x" id="closeModal" type="button">Tutup</button><iframe id="player" title="Video" allow="autoplay; fullscreen" allowfullscreen></iframe><video id="mplayer" class="mvid" controls playsinline hidden></video></div>
 </div>
 <div class="modal lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Gambar diperbesar">
   <button class="btn sun x" id="closeLb" type="button">Tutup</button>
@@ -830,7 +857,7 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
     {k:"Freelance",name:"Freelance",role:"Content Creator & Talent",desc:"Proyek lepas untuk klien: dari format QnA sampai konten bercerita.",c:"var(--indigo)",folder:"1oZaO0366S3IOY7NztQV_bund4tGpN0L7",tape:"",v:[
       ["QnA","1ZBmtkq1uCg1B5BoC_gX0Hn5TPxO2HGek"],["Konten Harapan","1fUCrHKPmbYJ2mXVOqwlHwpvwgqDzk3WZ"],["Freelance #3","10OYihUqMcjOUCTjs9IfrWi97DC31mtaX"],["Freelance #4","1HeI1fcEafmtINVwrLHbHiyQE8GHR23pO"]]},
     {k:"Assessment",name:"Assessment",role:"Social Media Specialist",desc:"Video perkenalan dan assessment untuk posisi Social Media Specialist.",c:"var(--orange)",folder:"12lrAcc5Qt1-0jdCv5HSrkZRgZRhQfPGC",tape:"sun",v:[
-      ["Sosmed Specialist: Silvana Adelia Maharani","1MS4N9P6jnwC4ZZplLpBIjV7cb8zr1A2m"]]}
+      ["Sosmed Specialist: Silvana Adelia Maharani","1MS4N9P6jnwC4ZZplLpBIjV7cb8zr1A2m","assets/assessment.mp4","assets/assessment.webp"]]}
   ];
   function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
   function view(id){return "https://drive.google.com/file/d/"+id+"/view";}
@@ -839,10 +866,11 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
   // video modal
   var modal=document.getElementById('modal'),player=document.getElementById('player');
   function openV(id){player.src="https://drive.google.com/file/d/"+id+"/preview";modal.hidden=false;document.getElementById('closeModal').focus();}
-  function closeV(){modal.hidden=true;player.src='about:blank';}
+  function closeV(){modal.hidden=true;player.src='about:blank';mp.pause();mp.removeAttribute('src');mp.hidden=true;player.hidden=false;}
+  var mp=document.getElementById('mplayer');
+  function openLocal(src){player.hidden=true;mp.hidden=false;mp.src=src;modal.hidden=false;mp.play().catch(function(){});document.getElementById('closeModal').focus();}
   document.getElementById('closeModal').addEventListener('click',closeV);
   modal.addEventListener('click',function(e){if(e.target===modal)closeV();});
-  document.getElementById('tv').addEventListener('click',function(e){if(standalone){e.preventDefault();openV("1MS4N9P6jnwC4ZZplLpBIjV7cb8zr1A2m");}});
 
   // lightbox
   var lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),lbcap=document.getElementById('lbcap');
@@ -866,13 +894,14 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
       var a=document.createElement('a');a.className='vid';a.href=view(v[1]);a.target='_blank';a.rel='noopener';a.style.setProperty('--c',p.c);
       a.setAttribute('aria-label','Tonton: '+v[0]);
       a.innerHTML='<span class="art p'+(i%4)+'"></span><span class="num">'+String(i+1).padStart(2,'0')+'</span><span class="shade"></span><span class="lbl">'+esc(p.k==="IM3"?"IM3 Circle Java":p.name)+'</span><span class="rec">REC</span><span class="p" aria-hidden="true"></span><span class="t">'+esc(v[0])+'</span><span class="gl"></span>';
-      if(standalone){
+      if(v[3]){var lp=new Image();lp.alt='';lp.className='th ok';lp.src=v[3];a.insertBefore(lp,a.querySelector('.shade'));}
+      else if(standalone){
         var urls=thumbs(v[1]),k=0,im=new Image();im.alt='';im.className='th';im.loading='lazy';im.referrerPolicy='no-referrer';im.decoding='async';
         im.onload=function(){if(im.naturalWidth>40)im.classList.add('ok');};
         im.onerror=function(){k++;if(k<urls.length)im.src=urls[k];else im.remove();};
         im.src=urls[0];a.insertBefore(im,a.querySelector('.shade'));
       }
-      a.addEventListener('click',function(e){if(standalone){e.preventDefault();openV(v[1]);}});
+      a.addEventListener('click',function(e){if(v[2]){e.preventDefault();openLocal(v[2]);}else if(standalone){e.preventDefault();openV(v[1]);}});
       strip.appendChild(a);
     });
     Array.prototype.forEach.call(sec.querySelectorAll('.arrow'),function(b){
@@ -888,7 +917,23 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
     a.addEventListener('click',function(e){if(standalone){e.preventDefault();openV(id);}});
   });
   // assessment cover on the TV screen too
-  if(standalone){var ti=new Image();ti.alt='';ti.referrerPolicy='no-referrer';ti.onload=function(){document.getElementById('tvscreen').prepend(ti);};ti.src=thumbs("1MS4N9P6jnwC4ZZplLpBIjV7cb8zr1A2m")[0];}
+
+  // featured autoplay video (muted autoplay is the only kind browsers allow)
+  (function(){
+    var v=document.getElementById('avid'),pb=document.getElementById('aplay'),sb=document.getElementById('asound'),bar=document.getElementById('abar'),pr=document.getElementById('aprog'),fb=document.getElementById('afull'),user=false;
+    function sync(){pb.textContent=v.paused?'▶':'❚❚';pb.setAttribute('aria-label',v.paused?'Putar video':'Jeda video');sb.textContent=v.muted?'🔇 Nyalakan suara':'🔊 Matikan suara';}
+    function toggle(){user=true;if(v.paused)v.play().catch(function(){});else v.pause();}
+    pb.addEventListener('click',toggle);v.addEventListener('click',toggle);
+    sb.addEventListener('click',function(){v.muted=!v.muted;if(v.paused)v.play().catch(function(){});sync();});
+    fb.addEventListener('click',function(){var f=v.requestFullscreen||v.webkitEnterFullscreen||v.webkitRequestFullscreen;if(f){v.muted=false;f.call(v);v.play().catch(function(){});sync();}});
+    bar.addEventListener('click',function(e){var r=bar.getBoundingClientRect();if(v.duration)v.currentTime=(e.clientX-r.left)/r.width*v.duration;});
+    v.addEventListener('timeupdate',function(){if(v.duration)pr.style.width=(v.currentTime/v.duration*100)+'%';});
+    ['play','pause','volumechange'].forEach(function(ev){v.addEventListener(ev,sync);});
+    if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting){if(!user||!v.paused){v.play().catch(function(){});}}else if(!v.paused){v.pause();user=false;}
+    });},{threshold:.35}).observe(v);}
+    sync();
+  })();
 
   // 3D tilt + glare on cards
   if(!reduce && matchMedia('(hover:hover)').matches){
@@ -923,34 +968,41 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
   } else {Array.prototype.forEach.call(rv,function(el){el.classList.add('on');});}
   if(!reduce){
     var folds=Array.prototype.slice.call(document.querySelectorAll('section.band'));
-    var EXIT=['tilt','turn','zoom','swing','sink'],ENTER=['iris','curtain','none','diag','none','blinds'],EDGE=['','edge-wave','','edge-zig','','edge-slant'];
-    folds.forEach(function(f,i){f.classList.add('fold');f._x=EXIT[i%EXIT.length];f._n=i?ENTER[i%ENTER.length]:'none';var e=EDGE[i%EDGE.length];if(e&&i)f.classList.add(e);});
+    // each section gets its own 3D entrance + exit, so no two neighbours move the same way
+    var ENTER=['flap','door','rise','cube','flip','drop'],EXIT=['tilt','turn','zoom','swing','sink','cubeout'],EDGE=['','edge-wave','','edge-zig','','edge-slant'];
+    folds.forEach(function(f,i){f.classList.add('fold');f._n=i?ENTER[i%ENTER.length]:'none';f._x=EXIT[(i*2+1)%EXIT.length];var e=EDGE[i%EDGE.length];if(e&&i)f.classList.add(e);});
+    function E(t){return 1-Math.pow(1-t,3);}
+    function enter(f,k){var a=1-E(k);switch(f._n){
+      case 'flap':  return ['50% 0',   'perspective(1300px) rotateX('+(-62*a)+'deg)'];
+      case 'door':  return ['0 50%',   'perspective(1300px) rotateY('+(58*a)+'deg)'];
+      case 'cube':  return ['100% 50%','perspective(1300px) rotateY('+(-58*a)+'deg) translateX('+(-6*a)+'%)'];
+      case 'rise':  return ['50% 100%','perspective(1300px) translateZ('+(-420*a)+'px) rotateX('+(28*a)+'deg)'];
+      case 'flip':  return ['50% 50%', 'perspective(1500px) rotateX('+(70*a)+'deg) scale('+(1-.15*a)+')'];
+      case 'drop':  return ['50% 0',   'perspective(1300px) translateY('+(-120*a)+'px) rotateZ('+(-6*a)+'deg) rotateX('+(-30*a)+'deg)'];
+    } return null;}
+    function exit(f,k){var a=E(k);switch(f._x){
+      case 'turn':   return ['0 50%',   'perspective(1300px) rotateY('+(-48*a)+'deg)'];
+      case 'zoom':   return ['50% 100%','perspective(1300px) translateZ('+(-380*a)+'px) rotate('+(-7*a)+'deg)'];
+      case 'swing':  return ['100% 0',  'rotate('+(12*a)+'deg) translateY('+(60*a)+'px)'];
+      case 'sink':   return ['50% 100%','perspective(1300px) rotateX('+(-50*a)+'deg) translateY('+(80*a)+'px)'];
+      case 'cubeout':return ['100% 50%','perspective(1300px) rotateY('+(55*a)+'deg) translateX('+(-8*a)+'%)'];
+      default:       return ['50% 100%','perspective(1300px) rotateX('+(55*a)+'deg) scale('+(1-.1*a)+')'];
+    }}
     var ticking=false;
-    function ex(f,p){
-      switch(f._x){
-        case 'turn': f.style.transformOrigin='0 50%';return 'perspective(1500px) rotateY('+(p*-16)+'deg) translateX('+(-p*3)+'%)';
-        case 'zoom': f.style.transformOrigin='50% 100%';return 'scale('+(1-p*0.16)+') rotate('+(p*-2.5)+'deg)';
-        case 'swing': f.style.transformOrigin='100% 0';return 'rotate('+(p*4)+'deg) translateY('+(p*30)+'px)';
-        case 'sink': f.style.transformOrigin='50% 100%';return 'perspective(1200px) rotateX('+(p*-12)+'deg) translateY('+(p*60)+'px) scale('+(1-p*0.05)+')';
-        default: f.style.transformOrigin='50% 100%';return 'perspective(1600px) rotateX('+(p*10)+'deg) scale('+(1-p*0.07)+')';
-      }}
-    function en(f,q){
-      if(q>=1)return 'none';
-      switch(f._n){
-        case 'iris': return 'circle('+(8+q*130).toFixed(1)+'% at 50% 0%)';
-        case 'curtain': var c=((1-q)*40).toFixed(1);return 'inset(0 '+c+'% 0 '+c+'% round 40px)';
-        case 'diag': return 'polygon(0 0,'+(q*220).toFixed(1)+'% 0,0 '+(q*220).toFixed(1)+'%)';
-        case 'blinds': return 'inset(0 0 '+((1-q)*100).toFixed(1)+'% 0 round 0 0 40px 40px)';
-      } return 'none';}
     function fold(){ticking=false;var H=innerHeight;
       folds.forEach(function(f){var r=f.getBoundingClientRect();
-        if(r.bottom<-80||r.top>H+80)return;
-        var p=r.bottom<H*0.75?Math.min(1,(H*0.75-r.bottom)/(H*0.7)):0;
-        var q=f._n==='none'?1:Math.max(0,Math.min(1,(H-r.top)/(H*0.7)));
-        if(p>0||f._p){f._p=p;f.style.transform=p?ex(f,p):'';f.style.setProperty('--dim',(p*0.3).toFixed(3));}
-        if(f._n!=='none'&&!f.classList.contains('edge-slant')){var c=en(f,q);if(c!==f._c){f._c=c;f.style.clipPath=c;}}
+        if(r.bottom<-120||r.top>H+120)return;
+        var kin=f._n==='none'?1:Math.max(0,Math.min(1,(H-r.top)/(H*0.75)));
+        var kout=r.bottom<H*0.8?Math.min(1,(H*0.8-r.bottom)/(H*0.75)):0;
+        var t=null,dim=0;
+        if(kin<1){t=enter(f,kin);dim=(1-kin)*0.3;}
+        else if(kout>0){t=exit(f,kout);dim=kout*0.45;}
+        var key=t?t[1]:'';if(key===f._k)return;f._k=key;
+        if(t){f.style.transformOrigin=t[0];f.style.transform=t[1];}else{f.style.transform='';}
+        f.style.setProperty('--dim',dim.toFixed(3));
       });}
     window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(fold);}},{passive:true});
+    window.addEventListener('resize',fold);
     fold();
     var tw=document.getElementById('tw'),pt=document.getElementById('portrait');
     window.addEventListener('scroll',function(){
