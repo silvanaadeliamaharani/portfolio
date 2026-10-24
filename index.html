@@ -24,7 +24,7 @@
 [hidden]{display:none!important}
 body{margin:0}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
 body{background:var(--ink);color:var(--cream);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden}
 a{color:var(--sun)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
@@ -43,6 +43,25 @@ button{font:inherit}
 .xr .track{display:inline-flex;gap:30px;animation:slide 26s linear infinite;font-family:var(--tape);text-transform:uppercase;font-size:1.05rem;letter-spacing:.04em}
 .xr .r2 .track{animation-direction:reverse}
 .xr .track span::after{content:"✳";margin-left:30px}
+.edge-wave{border-radius:0!important;-webkit-mask:radial-gradient(22px at 50% 0,#0000 98%,#000) 50% 0/44px 22px repeat-x,linear-gradient(#000,#000) 0 21px/100% calc(100% - 21px) no-repeat;mask:radial-gradient(22px at 50% 0,#0000 98%,#000) 50% 0/44px 22px repeat-x,linear-gradient(#000,#000) 0 21px/100% calc(100% - 21px) no-repeat}
+.edge-zig{border-radius:0!important;-webkit-mask:conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50% 0/40px 20px repeat-x,linear-gradient(#000,#000) 0 19px/100% calc(100% - 19px) no-repeat;mask:conic-gradient(from 135deg at top,#0000,#000 1deg 89deg,#0000 90deg) 50% 0/40px 20px repeat-x,linear-gradient(#000,#000) 0 19px/100% calc(100% - 19px) no-repeat}
+.edge-slant{border-radius:0!important;clip-path:polygon(0 48px,100% 0,100% 100%,0 100%);padding-top:120px}
+/* divider: 3D checker floor */
+.floor{position:relative;height:150px;background:var(--ink);perspective:260px;overflow:hidden}
+.floor i{position:absolute;left:-50%;right:-50%;top:10px;height:280px;transform:rotateX(62deg);transform-origin:50% 0;background:repeating-conic-gradient(var(--mustard) 0 25%,var(--maroon) 0 50%) 0 0/60px 60px;animation:floor 2.4s linear infinite;box-shadow:inset 0 70px 60px -10px var(--ink)}
+@keyframes floor{to{background-position:0 60px}}
+.floor b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--groovy);font-weight:400;font-size:clamp(1.6rem,4vw,2.6rem);color:var(--cream);text-shadow:3px 3px 0 var(--ink),5px 5px 0 var(--maroon);z-index:1;animation:bob 3s ease-in-out infinite}
+/* divider: film strip */
+.film{position:relative;background:var(--ink);padding:26px 0;overflow:hidden;transform:rotate(-2deg) scale(1.05);margin:18px 0}
+.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:14px;background:radial-gradient(circle,transparent 0,transparent 0) ,repeating-linear-gradient(90deg,var(--cream) 0 16px,transparent 16px 34px);opacity:.85}
+.film::before{top:6px} .film::after{bottom:6px}
+.film .track{display:inline-flex;gap:14px;animation:slide 40s linear infinite}
+.film img{height:150px;width:auto;border-radius:6px;border:3px solid #2a2320;filter:sepia(.25) saturate(1.1)}
+.filmwrap{background:var(--ink);padding:8px 0;overflow:hidden}
+/* divider: 3D swinging sign */
+.sign{background:var(--ink);height:170px;display:grid;place-items:center;perspective:700px;overflow:hidden}
+.sign span{display:inline-block;background:var(--sun);color:var(--maroon);font-family:var(--groovy);font-size:clamp(1.5rem,4vw,2.4rem);padding:8px 28px 14px;border:4px solid var(--cream);border-radius:16px;box-shadow:0 0 0 4px var(--ink),8px 8px 0 4px var(--orange);transform-origin:50% -60px;animation:swing 3.2s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotateX(18deg) rotateZ(-5deg)}50%{transform:rotateX(-12deg) rotateZ(5deg)}}
 .checker{height:28px;background:repeating-conic-gradient(var(--ink) 0 25%,var(--mustard) 0 50%) 0 0/28px 28px}
 
 /* type */
@@ -557,7 +576,7 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
     </div>
   </div>
 </section>
-<div class="xr" aria-hidden="true"><div class="r1"><div class="track"><span>Act & Content</span><span>Talent</span><span>Creator</span><span>Scriptwriter</span><span>Act & Content</span><span>Talent</span><span>Creator</span><span>Scriptwriter</span></div></div><div class="r2"><div class="track"><span>Ide</span><span>Naskah</span><span>Shooting</span><span>Editing</span><span>Posting</span><span>Ide</span><span>Naskah</span><span>Shooting</span><span>Editing</span><span>Posting</span></div></div></div>
+<div class="floor" aria-hidden="true"><i></i><b>Lights, camera, action!</b></div>
 
 <section class="band reel dots" id="konten">
   <div class="in rgrid">
@@ -597,7 +616,7 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
     </div>
   </div>
 </section>
-<div class="xr" aria-hidden="true"><div class="r1"><div class="track"><span>IM3 Circle Java</span><span>Venti Selfphoto</span><span>Freelance</span><span>Assessment</span><span>29 video</span><span>IM3 Circle Java</span><span>Venti Selfphoto</span><span>Freelance</span><span>Assessment</span><span>29 video</span></div></div><div class="r2"><div class="track"><span>Klik untuk menonton</span><span>Reels</span><span>TikTok</span><span>Short video</span><span>Klik untuk menonton</span><span>Reels</span><span>TikTok</span><span>Short video</span></div></div></div>
+<div class="filmwrap" aria-hidden="true"><div class="film"><div class="track"><img src="assets/konten-1.webp" alt="" loading="lazy"><img src="assets/konten-2.webp" alt="" loading="lazy"><img src="assets/konten-3.webp" alt="" loading="lazy"><img src="assets/konten-4.webp" alt="" loading="lazy"><img src="assets/konten-5.webp" alt="" loading="lazy"><img src="assets/konten-6.webp" alt="" loading="lazy"><img src="assets/konten-7.webp" alt="" loading="lazy"><img src="assets/konten-8.webp" alt="" loading="lazy"><img src="assets/konten-9.webp" alt="" loading="lazy"><img src="assets/desain-2.webp" alt="" loading="lazy"><img src="assets/desain-3.webp" alt="" loading="lazy"><img src="assets/prj-3.webp" alt="" loading="lazy"><img src="assets/barista-1.webp" alt="" loading="lazy"><img src="assets/konten-1.webp" alt="" loading="lazy"><img src="assets/konten-2.webp" alt="" loading="lazy"><img src="assets/konten-3.webp" alt="" loading="lazy"><img src="assets/konten-4.webp" alt="" loading="lazy"><img src="assets/konten-5.webp" alt="" loading="lazy"><img src="assets/konten-6.webp" alt="" loading="lazy"><img src="assets/konten-7.webp" alt="" loading="lazy"><img src="assets/konten-8.webp" alt="" loading="lazy"><img src="assets/konten-9.webp" alt="" loading="lazy"><img src="assets/desain-2.webp" alt="" loading="lazy"><img src="assets/desain-3.webp" alt="" loading="lazy"><img src="assets/prj-3.webp" alt="" loading="lazy"><img src="assets/barista-1.webp" alt="" loading="lazy"></div></div></div>
 
 <section class="band gallery dots" id="video">
   <div class="in">
@@ -761,7 +780,7 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
     </div>
   </div>
 </section>
-<div class="xr" aria-hidden="true"><div class="r1"><div class="track"><span>Let's work together</span><span>Contact</span><span>Let's work together</span><span>Contact</span></div></div><div class="r2"><div class="track"><span>Content Creator</span><span>Social Media Specialist</span><span>Content Creator</span><span>Social Media Specialist</span></div></div></div>
+<div class="sign" aria-hidden="true"><span>Let's work together!</span></div>
 
 <section class="band contact dots" id="kontak">
   <div class="in">
@@ -904,14 +923,35 @@ h2.groovy{font-size:clamp(2.3rem,5.6vw,4rem);margin-bottom:16px}
   } else {Array.prototype.forEach.call(rv,function(el){el.classList.add('on');});}
   if(!reduce){
     var folds=Array.prototype.slice.call(document.querySelectorAll('section.band'));
-    folds.forEach(function(f){f.classList.add('fold');});
+    var EXIT=['tilt','turn','zoom','swing','sink'],ENTER=['iris','curtain','none','diag','none','blinds'],EDGE=['','edge-wave','','edge-zig','','edge-slant'];
+    folds.forEach(function(f,i){f.classList.add('fold');f._x=EXIT[i%EXIT.length];f._n=i?ENTER[i%ENTER.length]:'none';var e=EDGE[i%EDGE.length];if(e&&i)f.classList.add(e);});
     var ticking=false;
+    function ex(f,p){
+      switch(f._x){
+        case 'turn': f.style.transformOrigin='0 50%';return 'perspective(1500px) rotateY('+(p*-16)+'deg) translateX('+(-p*3)+'%)';
+        case 'zoom': f.style.transformOrigin='50% 100%';return 'scale('+(1-p*0.16)+') rotate('+(p*-2.5)+'deg)';
+        case 'swing': f.style.transformOrigin='100% 0';return 'rotate('+(p*4)+'deg) translateY('+(p*30)+'px)';
+        case 'sink': f.style.transformOrigin='50% 100%';return 'perspective(1200px) rotateX('+(p*-12)+'deg) translateY('+(p*60)+'px) scale('+(1-p*0.05)+')';
+        default: f.style.transformOrigin='50% 100%';return 'perspective(1600px) rotateX('+(p*10)+'deg) scale('+(1-p*0.07)+')';
+      }}
+    function en(f,q){
+      if(q>=1)return 'none';
+      switch(f._n){
+        case 'iris': return 'circle('+(8+q*130).toFixed(1)+'% at 50% 0%)';
+        case 'curtain': var c=((1-q)*40).toFixed(1);return 'inset(0 '+c+'% 0 '+c+'% round 40px)';
+        case 'diag': return 'polygon(0 0,'+(q*220).toFixed(1)+'% 0,0 '+(q*220).toFixed(1)+'%)';
+        case 'blinds': return 'inset(0 0 '+((1-q)*100).toFixed(1)+'% 0 round 0 0 40px 40px)';
+      } return 'none';}
     function fold(){ticking=false;var H=innerHeight;
       folds.forEach(function(f){var r=f.getBoundingClientRect();
-        if(r.bottom>H||r.bottom<-50){if(f._p){f._p=0;f.style.transform='';f.style.setProperty('--dim',0);}return;}
-        var p=Math.min(1,(H-r.bottom)/(H*0.85));f._p=p;
-        f.style.transform='perspective(1600px) rotateX('+(p*9)+'deg) scale('+(1-p*0.07)+')';f.style.setProperty('--dim',(p*0.45).toFixed(3));});}
+        if(r.bottom<-80||r.top>H+80)return;
+        var p=r.bottom<H*0.75?Math.min(1,(H*0.75-r.bottom)/(H*0.7)):0;
+        var q=f._n==='none'?1:Math.max(0,Math.min(1,(H-r.top)/(H*0.7)));
+        if(p>0||f._p){f._p=p;f.style.transform=p?ex(f,p):'';f.style.setProperty('--dim',(p*0.3).toFixed(3));}
+        if(f._n!=='none'&&!f.classList.contains('edge-slant')){var c=en(f,q);if(c!==f._c){f._c=c;f.style.clipPath=c;}}
+      });}
     window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(fold);}},{passive:true});
+    fold();
     var tw=document.getElementById('tw'),pt=document.getElementById('portrait');
     window.addEventListener('scroll',function(){
       var r=tw.parentNode.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){tw.style.transform='scale(1.12) translateY('+(r.top*-0.12)+'px)';}
